@@ -1,0 +1,16 @@
+un:
+    uName: MediCaps University
+    uAdd: Delhi
+    uNumbers: [99999999,77777777,66666666,4444444444]
+    uBranches: [Bhopal,Mumbai,Chennai,Hyderabd]
+    uStaff[0]: Proffessers =  40
+    uStaff[1]: Accountants = 6
+    uStaff[2]: Chaprasi = 45
+    uStaff[3]: Security = 16
+Spring:
+       config:
+               import:
+                        myfile.yml    
+    
+    
+     

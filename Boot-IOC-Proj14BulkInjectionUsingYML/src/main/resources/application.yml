@@ -1,0 +1,25 @@
+#Hospital properties
+hp:
+   name: Apple
+   add: Indore
+#   numbers[0]: 99999999
+#   numbers[1]: 88888888
+#   numbers[2]: 77777777
+   numbers: [9999999,8888888,7777777] #Inline properties
+#   branches[0]: Mumbai
+#   branches[1]: Delhi
+#   branches[2]: pune
+#   branches[3]: banglore
+   branches: [Mumbai,Delhi,Pune,Banglore] #Inline properties
+   staff[0]: Doctors = 40
+   staff[1]: Nurses = 70
+   staff[2]: Cleaners = 58
+   staff[3]: security = 40
+   hd: 
+      ceoname: Abhishek Singh
+      size: 10000
+      secret[0]: MLAs = 16
+      secret[1]: Ministers = 8
+      secret[2]: CM = 3
+      turnover: 100000000
+      

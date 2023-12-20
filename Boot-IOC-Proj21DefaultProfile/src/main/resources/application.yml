@@ -1,0 +1,58 @@
+spring:           # here we have to comment this lines of activing profiles to run the default profiles
+     profiles:
+            active: dev1 , service12
+        # Here we are using Default profile if there is no active profile then the below properties will executes with default profile classes    
+     datasource:
+         driver-class-name: oracle.jdbc.OracleDriver
+         url: jdbc:oracle:thin:@localhost:1521:orcl
+         username: system
+         password: root
+
+---
+spring:
+    config:
+       activate:
+             on-profile: dev
+    
+    datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/Employe
+          username: root
+          password: root
+          type: org.apache.commons.dbcp2.BasicDataSource
+---
+spring:
+    config:
+       activate:
+           on-profile: test
+    datasource:
+         driver-class-name: oracle.jdbc.OracleDriver
+         url: jdbc:oracle:thin:@localhost:1521:orcl
+         username: system
+         password: root
+         type: com.mchange.v2.c3p0.ComboPooledDataSource 
+---
+spring:
+    config:
+       activate:
+             on-profile: uat
+    
+    datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/Employe
+          username: root
+          password: root
+          type: oracle.ucp.jdbc.PoolDataSourceImpl
+---
+spring:
+    config:
+       activate:
+           on-profile: prod
+    datasource:
+         driver-class-name: oracle.jdbc.OracleDriver
+         url: jdbc:oracle:thin:@localhost:1521:orcl
+         username: system
+         password: root
+         
+         
+         

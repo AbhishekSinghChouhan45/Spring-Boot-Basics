@@ -1,0 +1,52 @@
+spring:
+     profiles:
+            active: dev , service1
+#            include: prod , service2 -> This is fallback profile which includes the given profile. If the active given profile is wrong or not found
+---
+spring:
+    config:
+       activate:
+             on-profile: dev
+    
+    datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/Employe
+          username: root
+          password: root
+          type: org.apache.commons.dbcp2.BasicDataSource
+---
+spring:
+    config:
+       activate:
+           on-profile: test
+    datasource:
+         driver-class-name: oracle.jdbc.OracleDriver
+         url: jdbc:oracle:thin:@localhost:1521:orcl
+         username: system
+         password: root
+         type: com.mchange.v2.c3p0.ComboPooledDataSource 
+---
+spring:
+    config:
+       activate:
+             on-profile: uat
+    
+    datasource:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/Employe
+          username: root
+          password: root
+          type: oracle.ucp.jdbc.PoolDataSourceImpl
+---
+spring:
+    config:
+       activate:
+           on-profile: prod
+    datasource:
+         driver-class-name: oracle.jdbc.OracleDriver
+         url: jdbc:oracle:thin:@localhost:1521:orcl
+         username: system
+         password: root
+         
+         
+         
